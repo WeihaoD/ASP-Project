@@ -25,6 +25,8 @@
  4. otherwise, reads command output from socket and displays them on the screen
  
 # Demo
+- Found out the ip address of server
+    - use "ip a" command to see the ipv4 address
 - Start the server first  
 
 
