@@ -55,23 +55,25 @@ void serviceClient(int sd){
 
 	pid=fork();
 	if(pid)                         /* reading client messages */
-          while(1)
-	   if(n=read(sd, message, 255)){
-	     message[n]='\0';
-	     fprintf(stderr,"%s", message);
-	     if(!strcasecmp(message, "quit\n")){
-	       //	        kill(pid, SIGTERM);
-	        exit(0);
-	     }
+       while(1){
+		   if(n=read(sd, message, 255)){
+			 message[n]='\0';
+			 fprintf(stderr,"%s", message);
+			 if(!strcasecmp(message, "quit\n")){
+			   //	        kill(pid, SIGTERM);
+				exit(0);
+			 }
+		   }
 	   }
 	if(!pid)                      /* sending messages to the client  */
-	   while(1)
-	    if(n=read(0, message, 255)){
-	      message[n]='\0';
-	      write(sd, message, strlen(message)+1);
-	      if(!strcasecmp(message, "quit\n")){
+	   while(1){
+		if(n=read(0, message, 255)){
+		  message[n]='\0';
+		  write(sd, message, strlen(message)+1);
+		  if(!strcasecmp(message, "quit\n")){
 		//     kill(getppid(), SIGTERM);
-	         exit(0);
-              }
-	    }
+			 exit(0);
+			  }
+		}
+	   }
 }

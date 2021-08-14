@@ -42,3 +42,4 @@
 
 - Then close the server  
     - Input "quit"
+    - ctrl c
