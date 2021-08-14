@@ -12,9 +12,9 @@
 - Then, the server’s child process  
  1. uses " dup2()" to make the screen descriptor designate the client socket
  2. gets in an infinite loop then :
-   – reads a shell command from the client’s socket,  
-   – if the client sends "quit", then the server’s child, closes socket and quits.
-   – otherwise, it excutes command, using the " system()" library function,
+ - reads a shell command from the client’s socket,  
+ - if the client sends "quit", then the server’s child, closes socket and quits.
+ - otherwise, it excutes command, using the " system()" library function,
 
  The client process connects to the server, then
 
