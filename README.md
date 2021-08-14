@@ -28,20 +28,34 @@
 - Found out the ip address of server
     - use "ip a" command to see the ipv4 address
 - Start the server first  
-
+![image](https://user-images.githubusercontent.com/79630970/129448084-185ddb7a-4101-4bf9-9e1b-18f8f4c2717f.png)
+![image](https://user-images.githubusercontent.com/79630970/129448106-1b982d23-3f3d-48bf-9301-4f7f8df7b7ee.png)
+ps: format is: ./server.exe 5000  
+    5000 is the port
 
 
 
 - Then start the client  
+![image](https://user-images.githubusercontent.com/79630970/129448178-6c7d43d1-3432-4a53-89eb-18f35a9e1c32.png)
+![image](https://user-images.githubusercontent.com/79630970/129448137-c1cc9df1-5d69-45e0-b806-42cb7ca098e9.png)
+ps: format is: ./client.exe [ip address] [port]
+
+**STEPs**
+- Input a shell command in the client.  
+- The command will be sent to the server.  
+- Server will read the shell command from the client.  
+- Server will excute the command, and show the result in the client.  
+![image](https://user-images.githubusercontent.com/79630970/129448396-ba0bae79-c00a-4ab4-872a-70f99150afbc.png)
 
 
-
-
+**CLOSE THE PROJECT**
 - Close the client first, otherwise it will become the zombie  
-    - input "quit"  
-
-
+    - input "quit" 
+    - ![image](https://user-images.githubusercontent.com/79630970/129448410-5a67532b-cac0-4270-aa5f-05b9733fa643.png)
+ 
 
 - Then close the server  
     - Input "quit"
     - ctrl c
+    - ![image](https://user-images.githubusercontent.com/79630970/129448426-10d5c92f-175d-4bda-b262-a09f5bbb2c32.png)
+
