@@ -25,20 +25,20 @@
  4. otherwise, reads command output from socket and displays them on the screen
  
 # Demo
-Start the server first  
+- Start the server first  
 
 
 
 
-Then start the client  
+- Then start the client  
 
 
 
 
-Close the client first, otherwise it will become the zombie  
-- input "quit"  
+- Close the client first, otherwise it will become the zombie  
+    - input "quit"  
 
 
 
-Then close the server  
-- Input "quit"
+- Then close the server  
+    - Input "quit"
