@@ -50,7 +50,7 @@ int main(int argc, char *argv[]){
        if(n=read(server, message, 255)){
           message[n]='\0';
           fprintf(stderr,"%s\n", message);
-          if(!strcasecmp(message, "Bye\n")){
+          if(!strcasecmp(message, "quit\n")){
 	    //  kill(pid, SIGTERM);
              exit(0);
            }
@@ -61,7 +61,7 @@ int main(int argc, char *argv[]){
       if(n=read(0, message, 255)){
          message[n]='\0';
          write(server, message, strlen(message)+1);
-         if(!strcasecmp(message, "Bye\n")){
+         if(!strcasecmp(message, "quit\n")){
            // kill(getppid(), SIGTERM);
             exit(0);
           }

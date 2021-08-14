@@ -10,7 +10,7 @@
 #include <signal.h>
 
 
-void child(int);
+void serviceClient(int);
 
 int main(int argc, char *argv[]){  
   int sd, client, portNumber, status;
@@ -39,14 +39,14 @@ int main(int argc, char *argv[]){
     printf("Got a client, start chatting\n");
     
     if(!fork())
-      child(client);
+      serviceClient(client);
 
     close(client);
     waitpid(0, &status, WNOHANG);
   }
 }
 
-void child(int sd){
+void serviceClient(int sd){
 	char message[255];
         int n, pid;
 
@@ -59,7 +59,7 @@ void child(int sd){
 	   if(n=read(sd, message, 255)){
 	     message[n]='\0';
 	     fprintf(stderr,"%s", message);
-	     if(!strcasecmp(message, "Bye\n")){
+	     if(!strcasecmp(message, "quit\n")){
 	       //	        kill(pid, SIGTERM);
 	        exit(0);
 	     }
@@ -69,7 +69,7 @@ void child(int sd){
 	    if(n=read(0, message, 255)){
 	      message[n]='\0';
 	      write(sd, message, strlen(message)+1);
-	      if(!strcasecmp(message, "Bye\n")){
+	      if(!strcasecmp(message, "quit\n")){
 		//     kill(getppid(), SIGTERM);
 	         exit(0);
               }

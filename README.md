@@ -23,3 +23,22 @@
  2. write the command to the server,
  3. if command is "quit", closes socket and quits
  4. otherwise, reads command output from socket and displays them on the screen
+ 
+# Demo
+Start the server first  
+
+
+
+
+Then start the client  
+
+
+
+
+Close the client first, otherwise it will become the zombie  
+- input "quit"  
+
+
+
+Then close the server  
+- Input "quit"
