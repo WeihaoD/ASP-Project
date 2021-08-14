@@ -46,7 +46,7 @@ int main(int argc, char *argv[]){
   pid=fork();
 
   if(pid)
-     while(1){
+     while(1){						/* reading server's messages */
 		 if(n=read(server, message, 255)){
           message[n]='\0';
           fprintf(stderr,"%s\n", message);
@@ -55,7 +55,7 @@ int main(int argc, char *argv[]){
              exit(0);
            }
          }
-	 }                         /* reading server's messages */
+	 }                         
        
 
   if(!pid)                           /* sending messages to server */
