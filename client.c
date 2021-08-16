@@ -49,7 +49,7 @@ int main(int argc, char *argv[]){
      while(1){						/* reading server's messages */
 		 if(n=read(server, message, 255)){
           message[n]='\0';
-          fprintf(stderr,"%s\n", message);
+          printf("%s\n", message);
           if(!strcasecmp(message, "quit\n")){
 	    //  kill(pid, SIGTERM);
              exit(0);

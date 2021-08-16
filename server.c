@@ -58,13 +58,13 @@ void serviceClient(int sd){
        while(1){
 		   if(n=read(sd, message, 255)){
 			 message[n]='\0';
-			 //fprintf(stderr,"%s", message);
+			 fprintf(stderr,"%s", message);
 			 if(!strcasecmp(message, "quit\n")){
 			   //	        kill(pid, SIGTERM);
 				exit(0);
 			 }
 			 dup2(sd, STDOUT_FILENO);
-			 fprintf(stderr,"%d", system(message));
+			 printf(system(message));
 		   }
 	   }
 	if(!pid)                      /* sending messages to the client  */
